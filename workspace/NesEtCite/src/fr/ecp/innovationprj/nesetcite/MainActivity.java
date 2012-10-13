@@ -15,9 +15,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);        
     }
     
-    public void openInfo(View view){
+    public void openInfo(View view) {
     	Intent intent = new Intent(this, InformationActivity.class);
     	startActivity(intent);
+    }
+    
+    public void espaceJeunes(View view) {
+    	startActivity(new Intent(this, LoginActivity.class));
     }
 
     @Override

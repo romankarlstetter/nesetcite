@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AbsoluteLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/button_view_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="159dp"
+        android:layout_marginLeft="49dp"
+        android:onClick="viewOffers"
+        android:text="@string/view_offers_label" />
+
+    <Button
+        android:id="@+id/button_view_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_view_offers"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="76dp"
+        android:layout_marginLeft="85dp"
+        android:onClick="viewProfile"
+        android:text="@string/profil_label" />
+    
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</RelativeLayout> 

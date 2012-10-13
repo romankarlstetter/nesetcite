@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import fr.ecp.innovationprj.nesetcite.R;
 
 public abstract class InfoFragments  extends Fragment{
 	
@@ -16,39 +15,39 @@ public abstract class InfoFragments  extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		webView = new WebView(inflater.getContext());
-		//webView.loadData(getHtml(), "text/html", "UTF-8");
-		webView.loadUrl("file:///android_asset/infos/history.html");
+		webView.loadUrl(infoUrl());
 		return webView;
 	}
 	
-	public abstract String getHtml();
+	public abstract String infoUrl();
+	protected final static String infoBase = "file:///android_asset/infos/";
 	
 	public static class HistoryFragment extends InfoFragments{
 		@Override
-		public String getHtml() {
-			return getResources().getString(R.string.info_history);
+		public String infoUrl() {
+			return infoBase + "history.html";
 		}
 		
 	}
 	
 	public static class MissionFragment extends InfoFragments{
 		@Override
-		public String getHtml() {
-			return "Mission";
+		public String infoUrl() {
+			return infoBase + "mission.html";
 		}
 	}
 	
 	public static class ObjectiveFragment extends InfoFragments{
 		@Override
-		public String getHtml() {
-			return "Objective";
+		public String infoUrl() {
+			return infoBase + "objective.html";
 		}
 	}
 	
 	public static class TeamFragment extends InfoFragments{
 		@Override
-		public String getHtml() {
-			return "Équipe";
+		public String infoUrl() {
+			return infoBase + "team.html";
 		}
 	}
 	

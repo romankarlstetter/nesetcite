@@ -8,6 +8,17 @@
     <string name="espaceJeunes">Espace Jeunes</string>
     <string name="espaceEntreprises">Espace Entreprises</string>
     <string name="title_activity_info">InfoActivity</string>
-    <string name="info_history">History</string>
+    <string name="info_history">Histoire</string>
+    <string name="login_label">Connexion</string>
+    <string name="cancel_label">Annuler</string>
+    <string name="save_label">Enregistrer</string>
+    <string name="user_label">Utilisateur</string>
+    <string name="password_label">Mot de passe</string>
+    <string name="forgot_password">J\'ai oublié mon mot de passe</string>
+    <string name="title_activity_young_people">YoungPeopleActivity</string>
+    <string name="profil_label">Mon Profil</string>
+    <string name="view_offers_label">Offres disponibles</string>
+    <string name="offer_label">Offre</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>
