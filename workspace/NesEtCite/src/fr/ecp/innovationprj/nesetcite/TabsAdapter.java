@@ -51,7 +51,6 @@ public class TabsAdapter extends FragmentPagerAdapter
             mContext = context;
         }
 
-        @Override
         public View createTabContent(String tag) {
             View v = new View(mContext);
             v.setMinimumWidth(0);
