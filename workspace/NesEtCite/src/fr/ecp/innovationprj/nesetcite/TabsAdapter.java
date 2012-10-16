@@ -90,17 +90,14 @@ public class TabsAdapter extends FragmentPagerAdapter
         return Fragment.instantiate(mContext, info.clss.getName(), info.args);
     }
 
-    @Override
     public void onTabChanged(String tabId) {
         int position = mTabHost.getCurrentTab();
         mViewPager.setCurrentItem(position);
     }
 
-    @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
     }
 
-    @Override
     public void onPageSelected(int position) {
         // Unfortunately when TabHost changes the current tab, it kindly
         // also takes care of putting focus on it when not in touch mode.
@@ -114,7 +111,6 @@ public class TabsAdapter extends FragmentPagerAdapter
         widget.setDescendantFocusability(oldFocusability);
     }
 
-    @Override
     public void onPageScrollStateChanged(int state) {
     }
 }
