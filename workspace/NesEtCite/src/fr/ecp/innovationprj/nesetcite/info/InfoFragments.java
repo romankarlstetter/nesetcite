@@ -2,9 +2,11 @@ package fr.ecp.innovationprj.nesetcite.info;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public abstract class InfoFragments  extends Fragment{
@@ -16,6 +18,9 @@ public abstract class InfoFragments  extends Fragment{
 			Bundle savedInstanceState) {
 		webView = new WebView(inflater.getContext());
 		webView.loadUrl(infoUrl());
+		webView.getSettings().setUseWideViewPort(false);
+		webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+		webView.setInitialScale(130);
 		return webView;
 	}
 	
