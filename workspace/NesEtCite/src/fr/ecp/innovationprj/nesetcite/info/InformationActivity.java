@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.widget.TabHost;
-import android.widget.TextView;
 import fr.ecp.innovationprj.nesetcite.R;
 import fr.ecp.innovationprj.nesetcite.TabsAdapter;
 
@@ -12,6 +11,17 @@ public class InformationActivity extends FragmentActivity {
     TabHost mTabHost;
     ViewPager  mViewPager;
     TabsAdapter mTabsAdapter;
+    
+    class Tripel{
+    	public String filename;
+    	public String tabTag;
+    	public String tabTitle;
+    	public Tripel(String filename, String tabTag, String tabTitle) {
+    		this.filename = filename;
+    		this.tabTag = tabTag;
+    		this.tabTitle = tabTitle;
+    	}
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +34,18 @@ public class InformationActivity extends FragmentActivity {
         mViewPager = (ViewPager)findViewById(R.id.pager);
 
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
-
-        mTabsAdapter.addTab(mTabHost.newTabSpec("histoire").setIndicator("Notre\nHistoire"),
-                InfoFragments.HistoryFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("mission").setIndicator("Notre\nMission"),
-        		InfoFragments.MissionFragment.class, null);        
-        mTabsAdapter.addTab(mTabHost.newTabSpec("objetive").setIndicator("Notre\nObjectif"),
-        		InfoFragments.ObjectiveFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("team").setIndicator("Notre\nÉquipe"),
-        		InfoFragments.TeamFragment.class, null);
         
-        for(int i = 0; i<mTabsAdapter.getCount(); i++){
-        	TextView title = (TextView) mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); 
-        	title.setSingleLine(false);        	
+        Tripel[] infos = new Tripel[4];
+        infos[0] = new Tripel("history.html", "history", "Notre\nHistoire");
+        infos[1] = new Tripel("team.html", "history", "Notre\nÉquipe");
+        infos[2] = new Tripel("mission.html", "mission", "Notre\nMission");
+        infos[3] = new Tripel("objective.html", "objective", "Notre\nObjectif");
+        
+        for(Tripel info: infos){
+        	Bundle b = new Bundle();
+        	b.putString(InfoFragment.FILENAME, info.filename);
+        	mTabsAdapter.addTab(mTabHost.newTabSpec(info.tabTag).setIndicator(info.tabTitle), 
+                  InfoFragment.class, b);
         }
         
         if (savedInstanceState != null) {
