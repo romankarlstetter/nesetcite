@@ -37,9 +37,9 @@ public class InformationActivity extends FragmentActivity {
         
         Tripel[] infos = new Tripel[4];
         infos[0] = new Tripel("history.html", "history", "Notre\nHistoire");
-        infos[1] = new Tripel("team.html", "history", "Notre\nÉquipe");
-        infos[2] = new Tripel("mission.html", "mission", "Notre\nMission");
-        infos[3] = new Tripel("objective.html", "objective", "Notre\nObjectif");
+        infos[1] = new Tripel("mission.html", "mission", "Notre\nMission");
+        infos[2] = new Tripel("objective.html", "objective", "Notre\nObjectif");
+        infos[3] = new Tripel("team.html", "history", "Notre\nÉquipe");
         
         for(Tripel info: infos){
         	Bundle b = new Bundle();

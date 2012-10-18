@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2pt"
+    >
+
+    <TextView
+        android:id="@+id/offerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Example Offer"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/offerDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/offerTitle"
+        android:layout_below="@+id/offerTitle"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="10pt"
+        android:text="C&apos;est un court description de l&apos;offre. C&apos;est pas plus long que deux ou trois lignes." />
+
+    <TextView
+        android:id="@+id/offerEnterprise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/offerDescription"
+        android:layout_toRightOf="@+id/offerTitle"
+        android:paddingLeft="10pt"
+        android:text="Example Entreprise" />
+
+</RelativeLayout>

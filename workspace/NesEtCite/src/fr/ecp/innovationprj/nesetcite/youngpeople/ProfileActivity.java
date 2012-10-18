@@ -1,21 +1,18 @@
 package fr.ecp.innovationprj.nesetcite.youngpeople;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.View;
 import fr.ecp.innovationprj.nesetcite.R;
 
-public class YoungPeopleActivity extends FragmentActivity{
-
-	private ProfileFragment f = null;
+public class ProfileActivity extends FragmentActivity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        f = new ProfileFragment();        	
-        setContentView(R.layout.activity_young_people);
+        setContentView(R.layout.fragment_tabs_pager);
     }
 
     @Override
@@ -24,15 +21,21 @@ public class YoungPeopleActivity extends FragmentActivity{
         return true;
     }
     
-    public void viewProfile(View view) {
-    	FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    	transaction.replace(R.id.fragment_container, f);
-    	transaction.addToBackStack(null);
-    	transaction.commit();
+    
+    private static final int IMAGE_PICK = 1;
+    
+    public void changeFoto(View view) {
+    	Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(Intent.createChooser(intent, "Selectionner Image"), IMAGE_PICK);
 
     }
     
-    public void viewOffers(View view) {
+    public void changeDescription(View view) {
+    	
+    }
+    
+    public void changeName(View view) {
     	
     }
 }

@@ -1,0 +1,43 @@
+.b,
+h3,
+strong
+{
+    color: #621D78 !important;
+}
+
+h1 {
+    color: #621D78;
+    font-size: 2em;
+    margin: 0 78px 20px 0;
+}
+
+p, li {
+    color: #666666;
+    font-size: 15px;
+    margin: 0 0 10px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+.team-member {
+    float: left;
+    min-height: 190px;
+    width: 144px;
+}
+
+
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix {
+}

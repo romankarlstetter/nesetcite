@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+import android.widget.TextView;
 
 
 /**
@@ -32,7 +33,7 @@ public class TabsAdapter extends FragmentPagerAdapter
     private final ViewPager mViewPager;
     private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
 
-    static final class TabInfo {
+    public static final class TabInfo {
         @SuppressWarnings("unused") private final String tag;
         private final Class<?> clss;
         private final Bundle args;
@@ -76,7 +77,11 @@ public class TabsAdapter extends FragmentPagerAdapter
         TabInfo info = new TabInfo(tag, clss, args);
         mTabs.add(info);
         mTabHost.addTab(tabSpec);
+        TextView title = (TextView) mTabHost.getTabWidget().
+        		getChildAt(getCount()-1).findViewById(android.R.id.title); 
+        title.setSingleLine(false);
         notifyDataSetChanged();
+        
     }
 
     @Override

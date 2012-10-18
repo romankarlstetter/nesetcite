@@ -1,10 +1,10 @@
 package fr.ecp.innovationprj.nesetcite;
 
-import fr.ecp.innovationprj.nesetcite.youngpeople.YoungPeopleActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import fr.ecp.innovationprj.nesetcite.youngpeople.YoungPeopleActivity;
 
 public class LoginActivity extends Activity {
 
@@ -19,3 +19,4 @@ public class LoginActivity extends Activity {
 	}
 	
 }
+

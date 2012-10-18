@@ -20,5 +20,6 @@
     <string name="view_offers_label">Offres disponibles</string>
     <string name="offer_label">Offre</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_offers">Offers</string>
 
 </resources>
