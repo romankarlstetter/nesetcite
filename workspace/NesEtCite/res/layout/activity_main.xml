@@ -1,37 +1,47 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Jobs &amp; Cité"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/buttonInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/nesetcite"
-        android:onClick="openInfo" />
-
-    <Button
-        android:id="@+id/buttonYoungpeople"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/buttonInfo"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="63dp"
-        android:onClick="espaceJeunes"
-        android:text="@string/espaceJeunes" />
+        android:layout_below="@+id/textView1"
+        android:layout_marginRight="41dp"
+        android:layout_marginTop="72dp"
+        android:onClick="openInfo"
+        android:text="Notre action" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonInfo"
+        android:layout_toLeftOf="@+id/textView1"
+        android:onClick="openOffers"
+        android:text="Offres" />
+
+    <Button
+        android:id="@+id/buttonYoungpeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonInfo"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="81dp"
-        android:text="@string/espaceEntreprises" />
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="96dp"
+        android:onClick="openMyCV"
+        android:text="Mon CV" />
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package fr.ecp.innovationprj.nesetcite.youngpeople;
+package fr.ecp.innovationprj.nesetcite.mycv;
 
 import fr.ecp.innovationprj.nesetcite.R;
 import android.os.Bundle;

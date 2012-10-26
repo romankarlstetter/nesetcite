@@ -3,7 +3,7 @@ package fr.ecp.innovationprj.nesetcite;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.ecp.innovationprj.nesetcite.youngpeople.ViewOfferFragment;
+import fr.ecp.innovationprj.nesetcite.mycv.ViewOfferFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

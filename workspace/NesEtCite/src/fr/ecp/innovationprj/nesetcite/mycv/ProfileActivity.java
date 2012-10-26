@@ -1,4 +1,4 @@
-package fr.ecp.innovationprj.nesetcite.youngpeople;
+package fr.ecp.innovationprj.nesetcite.mycv;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +28,8 @@ public class ProfileActivity extends FragmentActivity {
         
         mTabsAdapter.addTab(mTabHost.newTabSpec("profile").setIndicator("Mon Profile"), 
                 ProfileFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("cv").setIndicator("Mon CV"), DummyFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("personal_data").setIndicator("Personal Data"), EditPersonalDataFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("cv").setIndicator("CV"), DummyFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("cv2").setIndicator("BLuB"), DummyFragment.class, null);
         
     }

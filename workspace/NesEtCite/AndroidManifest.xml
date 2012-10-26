@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".youngpeople.ProfileActivity"
+            android:name=".mycv.ProfileActivity"
             android:label="@string/title_activity_young_people" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,35 @@
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="2pt"
+        android:orientation="vertical"
+        android:padding="3pt" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextToEdit description"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3pt"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textMultiLine" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="save"
+            android:text="Sauvgarder" />
+
+    </LinearLayout>

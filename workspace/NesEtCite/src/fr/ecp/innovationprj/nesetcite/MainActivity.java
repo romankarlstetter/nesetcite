@@ -20,10 +20,14 @@ public class MainActivity extends Activity {
     	startActivity(intent);
     }
     
-    public void espaceJeunes(View view) {
+    public void openMyCV(View view) {
     	startActivity(new Intent(this, LoginActivity.class));
     }
 
+    public void openOffers(View view) {
+    	startActivity(new Intent(this, OffersActivity.class));
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
