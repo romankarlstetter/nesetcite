@@ -1,9 +1,6 @@
-package fr.ecp.innovationprj.nesetcite;
+package fr.ecp.innovationprj.nesetcite.offers;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import fr.ecp.innovationprj.nesetcite.mycv.ViewOfferFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -15,19 +12,23 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import fr.ecp.innovationprj.nesetcite.R;
+import fr.ecp.innovationprj.nesetcite.mycv.ViewOfferFragment;
 
 public class OffersActivity extends FragmentActivity {
+	
+	OfferAdapter adapter;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offers);
-        ListAdapter a = new OfferAdapter(sampleList());
+        adapter = new OfferAdapter(new DummyOffersProvider());
         ListView listView = (ListView) findViewById(android.R.id.list);
-        listView.setAdapter(a);
+        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -43,12 +44,27 @@ public class OffersActivity extends FragmentActivity {
 		});
     }
     
+    public void applyFilter(View view) {
+    	EditText e = (EditText) findViewById(R.id.offerFilter);
+    	String filter = e.getText().toString();
+    	System.out.println("Applying filter: " + filter);
+    	adapter.applyFilter(filter);
+    }
+    
     private class OfferAdapter extends BaseAdapter {
-    	List<Offer> offerList;
-    	
-    	public OfferAdapter(List<Offer> offerList) {
-			this.offerList = offerList;
+    	List<Offer> offerList; //cache list in the adapter
+    	IOffersProvider provider;
+
+    	public OfferAdapter(IOffersProvider o) {
+    		provider = o;
+			this.offerList = provider.getOffers();
 		}
+    	
+    	public void applyFilter(String s){
+    		provider.setFilter(s);
+    		this.offerList = provider.getOffers();
+    		this.notifyDataSetChanged();
+    	}
     	
 		@Override
 		public int getCount() {
@@ -86,29 +102,7 @@ public class OffersActivity extends FragmentActivity {
 		}
     }
     
-    private List<Offer> sampleList(){
-    	Enterprise bmw = new Enterprise();
-    	bmw.setName("BMW");
-    	
-    	Enterprise audi = new Enterprise();
-    	audi.setName("Audi");
-    	
-    	Enterprise vw = new Enterprise();
-    	vw.setName("VW");
-    	
-    	List<Offer> l = new ArrayList<Offer>();
-    	l.add(new Offer("example 1", "this is a very short description", bmw));
-    	l.add(new Offer("example 2", "this is a very short description sdf sfd", vw));
-    	l.add(new Offer("example 3", "this is a very short descriptionsdf", bmw));
-    	l.add(new Offer("example 4", "this is a very short descriptions dfsdf ssdfs fsfs gethr", audi));
-    	l.add(new Offer("example 5", "this is a very short description", vw));
-    	l.add(new Offer("example 6", "this is a very short description jzunzn t", bmw));
-    	l.add(new Offer("example 7", "this is a very short description  urtz4t 3e4te 4ttr5 45t 5t ", vw));
-    	l.add(new Offer("example 8", "this is a very short descriptiont nnbn vnzt", audi));
-    	l.add(new Offer("example 9", "this is a very short descriptioneg sdf 3qf sdvs", audi));
-    	l.add(new Offer("example 10", "this is a very short descriptions f 2r f", bmw));
-    	return l;
-    }
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

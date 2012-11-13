@@ -1,7 +1,7 @@
 package fr.ecp.innovationprj.nesetcite.mycv;
 
-import fr.ecp.innovationprj.nesetcite.OffersActivity;
 import fr.ecp.innovationprj.nesetcite.R;
+import fr.ecp.innovationprj.nesetcite.offers.OffersActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

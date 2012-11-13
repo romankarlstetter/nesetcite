@@ -60,7 +60,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OffersActivity"
+            android:name=".offers.OffersActivity"
             android:label="@string/title_activity_offers" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

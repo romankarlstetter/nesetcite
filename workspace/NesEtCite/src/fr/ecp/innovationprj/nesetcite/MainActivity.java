@@ -1,6 +1,7 @@
 package fr.ecp.innovationprj.nesetcite;
 
 import fr.ecp.innovationprj.nesetcite.info.InformationActivity;
+import fr.ecp.innovationprj.nesetcite.offers.OffersActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

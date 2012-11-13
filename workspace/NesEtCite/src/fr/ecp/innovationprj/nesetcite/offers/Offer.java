@@ -1,12 +1,14 @@
-package fr.ecp.innovationprj.nesetcite;
+package fr.ecp.innovationprj.nesetcite.offers;
 
 import java.util.Date;
+
+import fr.ecp.innovationprj.nesetcite.Enterprise;
 
 
 public class Offer {
 	private String title;
 	private String descriptionShort;
-	private String desctiptionLong;
+	private String descriptionLong;
 	private Enterprise enterprise;
 	private String domain;
 	private String type;
@@ -29,11 +31,11 @@ public class Offer {
 	public void setDescriptionShort(String descriptionShort) {
 		this.descriptionShort = descriptionShort;
 	}
-	public String getDesctiptionLong() {
-		return desctiptionLong;
+	public String getDescriptionLong() {
+		return descriptionLong;
 	}
-	public void setDesctiptionLong(String desctiptionLong) {
-		this.desctiptionLong = desctiptionLong;
+	public void setDescriptionLong(String desctiptionLong) {
+		this.descriptionLong = desctiptionLong;
 	}
 	public Enterprise getEnterprise() {
 		return enterprise;
