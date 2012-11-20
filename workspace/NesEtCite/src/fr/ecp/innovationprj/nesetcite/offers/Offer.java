@@ -17,7 +17,14 @@ public class Offer {
 	public Offer(String title, String descriptionShort, Enterprise enterprise) {
 		this.title = title;
 		this.descriptionShort = descriptionShort;
+		this.descriptionLong = descriptionShort + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.";
 		this.enterprise = enterprise;
+		this.offerDate = new Date();
+		this.possibleBeginDate = new Date(); 
+		this.possibleBeginDate.setDate(possibleBeginDate.getDate()+5);
+		this.type = "example type";
+		this.domain = "example domain";
+		System.out.println(possibleBeginDate + " - " + offerDate);
 	}
 	public String getTitle() {
 		return title;

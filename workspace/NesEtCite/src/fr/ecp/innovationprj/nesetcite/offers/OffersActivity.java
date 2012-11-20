@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import fr.ecp.innovationprj.nesetcite.R;
-import fr.ecp.innovationprj.nesetcite.mycv.ViewOfferFragment;
 
 public class OffersActivity extends FragmentActivity {
 	
@@ -29,13 +28,15 @@ public class OffersActivity extends FragmentActivity {
         adapter = new OfferAdapter(new DummyOffersProvider());
         ListView listView = (ListView) findViewById(android.R.id.list);
         listView.setAdapter(adapter);
+        listView.requestFocus();
         listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
 			 	FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 			 	ViewOfferFragment f = new ViewOfferFragment();
+			 	f.setOffer((Offer) adapter.getItem(position));
                 ft.replace(R.id.offerFragmentFrame, f);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 ft.addToBackStack(null);
