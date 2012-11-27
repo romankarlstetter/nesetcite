@@ -9,39 +9,32 @@ public class Profile {
 	private String lastName;
 	private Date birthday;
 	private String telephone_number;
-	private List<String> education;
-	private List<String> professional_experiences;
-	private List<String> activities;
+	private List<CVItem> cvItems;
 
 	public Profile() {
 		firstName = "";
 		lastName = "";
 		birthday = new Date();
 		telephone_number = "+33 6...";
-		education = new ArrayList<String>();
-		professional_experiences = new ArrayList<String>();
-		activities = new ArrayList<String>();
+		cvItems = new ArrayList<CVItem>();
 	}
-	
-	public List<String> getEducation() {
-		return education;
+
+	public boolean addCVItem(CVItem object) {
+		return cvItems.add(object);
 	}
-	public void setEducation(List<String> education) {
-		this.education = education;
+
+	public CVItem getCVItem(int location) {
+		return cvItems.get(location);
 	}
-	public List<String> getProfessional_experiences() {
-		return professional_experiences;
+
+	public CVItem removeCVItem(int location) {
+		return cvItems.remove(location);
 	}
-	public void setProfessional_experiences(List<String> professional_experiences) {
-		this.professional_experiences = professional_experiences;
+
+	public int cvItemCount() {
+		return cvItems.size();
 	}
-	public List<String> getActivities() {
-		return activities;
-	}
-	public void setActivities(List<String> activities) {
-		this.activities = activities;
-	}
-	
+
 	public String getFirstName() {
 		return firstName;
 	}

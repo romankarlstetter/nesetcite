@@ -46,6 +46,8 @@ public class OffersActivity extends FragmentActivity {
     }
     
     public void applyFilter(View view) {
+    	/// order by date
+    	/// order by category
     	EditText e = (EditText) findViewById(R.id.offerFilter);
     	String filter = e.getText().toString();
     	System.out.println("Applying filter: " + filter);

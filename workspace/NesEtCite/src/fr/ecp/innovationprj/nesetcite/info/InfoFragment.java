@@ -12,7 +12,7 @@ public class InfoFragment  extends Fragment{
 	
 	private WebView webView;
 	private String infoFilename;
-	protected final static String infoBase = "file:///android_asset/infos/";
+	protected final static String infoBase = "file:///android_asset/infos/"; /// @todo url
 	public final static String FILENAME = "fname";
 	
 	@Override
