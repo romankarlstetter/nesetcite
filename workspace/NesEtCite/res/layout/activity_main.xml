@@ -4,44 +4,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/logo_nes" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Jobs &amp; Cité"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/buttonInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginRight="41dp"
-        android:layout_marginTop="72dp"
-        android:onClick="openInfo"
-        android:text="Notre action" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonInfo"
-        android:layout_toLeftOf="@+id/textView1"
-        android:onClick="openOffers"
-        android:text="Offres" />
+        android:layout_marginLeft="34dp"
+        android:src="@drawable/logo_jobsetcite" />
 
     <Button
         android:id="@+id/buttonYoungpeople"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonInfo"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="96dp"
+        android:layout_below="@+id/buttonInfo"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/imageView2"
+        android:background="@drawable/bouton_rond"
         android:onClick="openMyCV"
-        android:text="Mon CV" />
+        android:text="Mon CV"
+        android:textSize="17sp"
+        android:textColor="#FFFFFFFF" />
+
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonYoungpeople"
+        android:layout_below="@+id/imageView1"
+        android:background="@drawable/bouton_rond"
+        android:onClick="openInfo"
+        android:text="Notre action"
+        android:textSize="17sp"
+        android:textColor="#FFFFFFFF" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:background="@drawable/bouton_rond"
+        android:onClick="openOffers"
+        android:text="Offres"
+        android:textSize="17sp"
+        android:textColor="#FFFFFFFF" />
 
 </RelativeLayout>
