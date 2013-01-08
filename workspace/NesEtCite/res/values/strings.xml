@@ -21,5 +21,6 @@
     <string name="offer_label">Offre</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_offers">Offers</string>
-
+	<string name="app_id">144672425685845</string>
+    
 </resources>
