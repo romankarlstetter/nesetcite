@@ -1,47 +1,134 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/RelativeLayout1"
+    android:id="@+id/topLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_gravity="center" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Jobs &amp; Cité"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/nesetcite" />
 
-    <Button
-        android:id="@+id/buttonInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginRight="41dp"
-        android:layout_marginTop="72dp"
-        android:onClick="openInfo"
-        android:text="Notre action" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="172dp"
+        android:layout_height="102dp"
+        android:layout_gravity="right"
+        android:src="@drawable/logo_jobsetcite" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonInfo"
-        android:layout_toLeftOf="@+id/textView1"
-        android:onClick="openOffers"
-        android:text="Offres" />
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/buttonYoungpeople"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonInfo"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="96dp"
-        android:onClick="openMyCV"
-        android:text="Mon CV" />
+        <RelativeLayout
+            android:id="@+id/layoutYoungPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="130dp" >
 
-</RelativeLayout>
+            <ImageButton
+                android:id="@+id/buttonYoungpeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:maxHeight="50pt"
+                android:maxWidth="50pt"
+                android:onClick="openMyCV"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bouton_rond" />
+
+            <TextView
+                android:id="@+id/textViewYoungPeople"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Mon CV"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#eeeeee" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonInfoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="29dp"
+            android:gravity="center" >
+
+            <ImageButton
+                android:id="@+id/buttonInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:maxHeight="60pt"
+                android:maxWidth="60pt"
+                android:onClick="openInfo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bouton_rond" />
+
+            <TextView
+                android:id="@+id/textViewInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Notre action"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#eeeeee" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutOffers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="30dp" >
+
+            <ImageButton
+                android:id="@+id/buttonOffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                android:maxHeight="45pt"
+                android:maxWidth="45pt"
+                android:onClick="openOffers"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bouton_rond" />
+
+            <TextView
+                android:id="@+id/textViewOffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Offres"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#eeeeee" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>
