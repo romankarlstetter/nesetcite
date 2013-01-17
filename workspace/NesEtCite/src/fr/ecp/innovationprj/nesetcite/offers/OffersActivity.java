@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import fr.ecp.innovationprj.nesetcite.R;
+import fr.ecp.innovationprj.nesetcite.offers.AbstractOffersProvider.OfferFilter;
 
 public class OffersActivity extends FragmentActivity {
 	
@@ -25,7 +26,8 @@ public class OffersActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offers);
-        adapter = new OfferAdapter(new DummyOffersProvider());
+//        adapter = new OfferAdapter(new DummyOffersProvider());
+        adapter = new OfferAdapter(new JsonOffersProvider(getApplicationContext()));
         ListView listView = (ListView) findViewById(android.R.id.list);
         listView.setAdapter(adapter);
         listView.requestFocus();
@@ -56,21 +58,24 @@ public class OffersActivity extends FragmentActivity {
     
     private class OfferAdapter extends BaseAdapter {
     	List<Offer> offerList; //cache list in the adapter
-    	IOffersProvider provider;
+    	AbstractOffersProvider provider;
 
-    	public OfferAdapter(IOffersProvider o) {
+    	public OfferAdapter(AbstractOffersProvider o) {
     		provider = o;
-			this.offerList = provider.getOffers();
+			this.offerList = provider.getFilteredOfferList();
 		}
     	
     	public void applyFilter(String s){
-    		provider.setFilter(s);
-    		this.offerList = provider.getOffers();
+    		provider.setFilter(new OfferFilter(s,s));
+    		this.offerList = provider.getFilteredOfferList();
     		this.notifyDataSetChanged();
     	}
     	
 		@Override
 		public int getCount() {
+			if(offerList == null){
+				return 0;
+			}
 			return offerList.size();
 		}
 

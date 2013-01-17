@@ -2,8 +2,6 @@ package fr.ecp.innovationprj.nesetcite.offers;
 
 import java.util.Date;
 
-import fr.ecp.innovationprj.nesetcite.Enterprise;
-
 
 public class Offer {
 	private String title;
@@ -14,10 +12,12 @@ public class Offer {
 	private String type;
 	private Date offerDate;
 	private Date possibleBeginDate;
+	public Offer() {
+	}
 	public Offer(String title, String descriptionShort, Enterprise enterprise) {
 		this.title = title;
 		this.descriptionShort = descriptionShort;
-		this.descriptionLong = descriptionShort + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.";
+		this.descriptionLong = descriptionShort;
 		this.enterprise = enterprise;
 		this.offerDate = new Date();
 		this.possibleBeginDate = new Date(); 
@@ -25,6 +25,38 @@ public class Offer {
 		this.type = "example type";
 		this.domain = "example domain";
 		System.out.println(possibleBeginDate + " - " + offerDate);
+	}
+	
+	public static class Enterprise {
+		private String name;
+		private String contactName;
+		private String contactNumber;
+		private String contactMail;
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getContactName() {
+			return contactName;
+		}
+		public void setContactName(String contactName) {
+			this.contactName = contactName;
+		}
+		public String getContactNumber() {
+			return contactNumber;
+		}
+		public void setContactNumber(String contactNumber) {
+			this.contactNumber = contactNumber;
+		}
+		public String getContactMail() {
+			return contactMail;
+		}
+		public void setContactMail(String contactMail) {
+			this.contactMail = contactMail;
+		}
+		
 	}
 	public String getTitle() {
 		return title;

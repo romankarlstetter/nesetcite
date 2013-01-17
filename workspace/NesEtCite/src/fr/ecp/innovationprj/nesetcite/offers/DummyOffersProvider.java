@@ -1,13 +1,13 @@
 package fr.ecp.innovationprj.nesetcite.offers;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import fr.ecp.innovationprj.nesetcite.Enterprise;
+import fr.ecp.innovationprj.nesetcite.offers.Offer.Enterprise;
 
-public class DummyOffersProvider implements IOffersProvider {
+public class DummyOffersProvider extends AbstractOffersProvider {
 	private List<Offer> offers;
+	
 	public DummyOffersProvider() {
 		Enterprise bmw = new Enterprise();
     	bmw.setName("BMW");
@@ -30,26 +30,13 @@ public class DummyOffersProvider implements IOffersProvider {
     	offers.add(new Offer("Bla 9", "this is a very short descriptioneg sdf 3qf sdvs", audi));
     	offers.add(new Offer("Lorem Ipsum 10", "this is a very short descriptions f 2r f", bmw));
     	
-    	filter = "";
+    	filter = new OfferFilter();
 	}
 	
+	
 	@Override
-	public List<Offer> getOffers() {
-		List<Offer> filtered = new ArrayList<Offer>();
-		filtered.addAll(offers);
-		Iterator<Offer> i= filtered.iterator();
-		while(i.hasNext()){
-			Offer o = i.next();
-			if(!o.getDescriptionShort().contains(filter)){
-				i.remove();
-			}
-		}
-    	return filtered;
+	public List<Offer> getFilteredOfferList() {
+		return applyFilter(offers);
 	}
 
-	private String filter;
-	@Override
-	public void setFilter(String filter) {
-		this.filter = filter;
-	}
 }

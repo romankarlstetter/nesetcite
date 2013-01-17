@@ -1,8 +1,5 @@
 package fr.ecp.innovationprj.nesetcite.offers;
 
-import java.text.SimpleDateFormat;
-
-import fr.ecp.innovationprj.nesetcite.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
@@ -10,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import fr.ecp.innovationprj.nesetcite.R;
 
 public class ViewOfferFragment extends Fragment{
 

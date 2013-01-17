@@ -1,0 +1,37 @@
+{
+	"firstName": "Max",
+	"lastName": "McLastname",
+	"birthday": 910306800,
+	"telephoneNumber": "+33612345678"
+	"cvItems" : 
+	[
+		{
+			"category": "education",
+			"description": "École"
+		},
+		{
+			"category": "education",
+			"description": "Lycée"
+		},
+		{
+			"category": "education",
+			"description": "ECP"
+		},
+		{
+			"category": "experience",
+			"description": "stage A"
+		},
+		{
+			"category": "experience",
+			"description": "stage B"
+		},
+		{
+			"category": "other",
+			"description": "Skiing"
+		},
+		{
+			"category": "other",
+			"description": "Party"
+		}
+	]
+}

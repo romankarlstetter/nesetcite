@@ -39,7 +39,7 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
         mTabsAdapter.addTab(mTabHost.newTabSpec("personal_data").setIndicator("Personal Data"), EditPersonalDataFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("education").setIndicator("Formation"), CVItemListFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("experiences").setIndicator("Expériences pro"), CVItemListFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("activities").setIndicator("Activitées"), CVItemListFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("other").setIndicator("Activitées"), CVItemListFragment.class, null);
         
     }
 
