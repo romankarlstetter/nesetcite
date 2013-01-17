@@ -20,8 +20,9 @@ public abstract class AbstractOffersProvider {
 		while(i.hasNext()){
 			Offer o = i.next();
 			if(
-					o.getDescriptionShort().contains(filter.getDescriptionFilter()) 
-					|| o.getTitle().contains(filter.getTitleFilter())
+					o.getDescriptionShort().toLowerCase().contains(filter.getDescriptionFilter().toLowerCase()) 
+					|| o.getDescriptionLong().toLowerCase().contains(filter.getDescriptionFilter().toLowerCase())
+					|| o.getTitle().toLowerCase().contains(filter.getTitleFilter().toLowerCase())
 			){
 				filtered.add(o);
 			}

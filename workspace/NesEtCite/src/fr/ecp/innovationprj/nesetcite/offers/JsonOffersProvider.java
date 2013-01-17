@@ -20,6 +20,7 @@ public class JsonOffersProvider extends AbstractOffersProvider {
 	public JsonOffersProvider(Context c) {
 		mapper = new ObjectMapper();
 		applicationContext = c;
+		filter = new OfferFilter();
 	}
 	
 	
