@@ -11,16 +11,21 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TabHost;
+import fr.ecp.innocationprj.nesetcite.information.ProfileAccess;
+import fr.ecp.innocationprj.nesetcite.information.ProfileInformationAdapter;
 import fr.ecp.innovationprj.nesetcite.EditTextDialog;
 import fr.ecp.innovationprj.nesetcite.EditTextDialog.EditTextDialogListener;
 import fr.ecp.innovationprj.nesetcite.R;
 import fr.ecp.innovationprj.nesetcite.TabsAdapter;
 
-public class ProfileActivity extends FragmentActivity implements EditTextDialogListener {
+public class ProfileActivity extends FragmentActivity implements EditTextDialogListener, ProfileAccess {
     TabHost mTabHost;
     ViewPager  mViewPager;
     TabsAdapter mTabsAdapter;
     List<CVItem> mCVItemList;
+    ProfileInformationAdapter profileAdapter;
+    private Profile profile;
+    
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,16 +35,24 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
         mTabHost.setup();
         mCVItemList = new ArrayList<CVItem>();
         
+        profileAdapter = new ProfileInformationAdapter(getApplicationContext());
+        profile = profileAdapter.getUserProfile();
+        
         mViewPager = (ViewPager)findViewById(R.id.pager);
         
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
-        
         mTabsAdapter.addTab(mTabHost.newTabSpec("profile").setIndicator("Mon Profile"), 
                 ProfileFragment.class, null);
         mTabsAdapter.addTab(mTabHost.newTabSpec("personal_data").setIndicator("Personal Data"), EditPersonalDataFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("education").setIndicator("Formation"), CVItemListFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("experiences").setIndicator("Expériences pro"), CVItemListFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("other").setIndicator("Activitées"), CVItemListFragment.class, null);
+        Bundle edu = new Bundle();
+        edu.putString("category", "education");
+        mTabsAdapter.addTab(mTabHost.newTabSpec("education").setIndicator("Formation"), CVItemListFragment.class, edu);
+        Bundle exp = new Bundle();
+        exp.putString("category", "experiences");
+        mTabsAdapter.addTab(mTabHost.newTabSpec("experiences").setIndicator("Expériences pro"), CVItemListFragment.class, exp);
+        Bundle other = new Bundle();
+        other.putString("category", "other");
+        mTabsAdapter.addTab(mTabHost.newTabSpec("other").setIndicator("Activitées"), CVItemListFragment.class, other);
         
     }
 
@@ -81,6 +94,13 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
 		CVItem i = new CVItem();
 		i.setCategory(mTabHost.getCurrentTabTag());
 		i.setDescription(inputText);
-		mCVItemList.add(i);
+		getProfile().addCVItem(i);
 	}
+	
+	public Profile getProfile() {
+		return profile;
+	}
+	
+
+	
 }

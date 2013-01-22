@@ -2,27 +2,30 @@
 	"firstName": "Max",
 	"lastName": "McLastname",
 	"birthday": 910306800,
-	"telephoneNumber": "+33612345678"
+	"telephoneNumber": "+33612345678",
 	"cvItems" : 
 	[
 		{
 			"category": "education",
-			"description": "École"
+			"description": "École",
+			"title": "École Centrale Paris"
 		},
 		{
 			"category": "education",
-			"description": "Lycée"
+			"description": "Lycée",
+			"title": "Blablabla",
+			"dateStart": "910326800"
 		},
 		{
 			"category": "education",
 			"description": "ECP"
 		},
 		{
-			"category": "experience",
+			"category": "experiences",
 			"description": "stage A"
 		},
 		{
-			"category": "experience",
+			"category": "experiences",
 			"description": "stage B"
 		},
 		{

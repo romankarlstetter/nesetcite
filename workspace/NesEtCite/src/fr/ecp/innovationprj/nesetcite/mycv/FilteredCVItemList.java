@@ -29,13 +29,13 @@ public class FilteredCVItemList extends AbstractList<CVItem> {
 	
 	@Override
 	public CVItem get(int location) {
-		int count = 0;
+		int count = -1;
 		for (int i = 0; i< list.size(); i++){
-			if(count == location){
-				return list.get(i);
-			}
 			if(list.get(i).getCategory().equals(category)){
 				count++;
+			}
+			if(count == location){
+				return list.get(i);
 			}
 		}
 		throw new ArrayIndexOutOfBoundsException(location);

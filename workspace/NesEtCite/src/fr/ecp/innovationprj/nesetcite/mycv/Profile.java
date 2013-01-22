@@ -23,12 +23,12 @@ public class Profile {
 		return cvItems.add(object);
 	}
 	
-	public void setCVItems(List<CVItem> items){
+	public void setCvItems(List<CVItem> items){
 		cvItems = items;
 	}
-
-	public CVItem getCVItem(int location) {
-		return cvItems.get(location);
+	
+	public List<CVItem> getCvItems(){
+		return cvItems;
 	}
 
 	public CVItem removeCVItem(int location) {
