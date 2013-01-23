@@ -11,6 +11,9 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TabHost;
+
+import com.facebook.Session;
+
 import fr.ecp.innocationprj.nesetcite.information.ProfileAccess;
 import fr.ecp.innocationprj.nesetcite.information.ProfileInformationAdapter;
 import fr.ecp.innovationprj.nesetcite.EditTextDialog;
@@ -72,14 +75,6 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
 
     }
     
-    public void changeDescription(View view) {
-    	
-    }
-    
-    public void changeName(View view) {
-    	
-    }
-    
     public void addCVItem(View view) {
     	FragmentManager fm = getSupportFragmentManager();
         EditTextDialog editTextDialog = new EditTextDialog();
@@ -95,6 +90,11 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
 		i.setCategory(mTabHost.getCurrentTabTag());
 		i.setDescription(inputText);
 		getProfile().addCVItem(i);
+	}
+	
+	public void logout(View view){
+		Session.getActiveSession().closeAndClearTokenInformation();
+		finish();
 	}
 	
 	public Profile getProfile() {

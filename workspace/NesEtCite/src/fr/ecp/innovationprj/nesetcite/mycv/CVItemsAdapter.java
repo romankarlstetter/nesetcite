@@ -24,8 +24,7 @@ public class CVItemsAdapter extends ArrayAdapter<CVItem> {
 			convertView = inflater.inflate(R.layout.cv_item_layout, null);
 		}
 		TextView title = (TextView) convertView.findViewById(R.id.cv_item_title);
-		//title.setText(getItem(position).getTitle());
-		System.out.println("title: " + getItem(position).getTitle());
+		title.setText(getItem(position).getTitle());
 
 		TextView description = (TextView) convertView.findViewById(R.id.cv_item_description);
 		description.setText(getItem(position).getDescription());
@@ -40,8 +39,7 @@ public class CVItemsAdapter extends ArrayAdapter<CVItem> {
 		if (getItem(position).getDateEnd() != null){
 			dateText = dateText + " - " + dateFormat.format(getItem(position).getDateEnd());
 		}
-		//date.setText(dateText);
-		System.out.println("datetext: " + dateText);
+		date.setText(dateText);
 		return convertView;
 		
 	}

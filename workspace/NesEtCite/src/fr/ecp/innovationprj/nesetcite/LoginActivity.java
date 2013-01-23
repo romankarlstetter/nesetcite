@@ -9,6 +9,7 @@ import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
+import com.facebook.android.Facebook;
 import com.facebook.model.GraphUser;
 
 import fr.ecp.innovationprj.nesetcite.mycv.ProfileActivity;
