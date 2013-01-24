@@ -8,6 +8,7 @@ public class Profile {
 	private String firstName;
 	private String lastName;
 	private Date birthday;
+	private String birthplace;
 	private String telephoneNumber;
 	private List<CVItem> cvItems;
 
@@ -19,6 +20,13 @@ public class Profile {
 		cvItems = new ArrayList<CVItem>();
 	}
 
+	public String getBirthplace() {
+		return birthplace;
+	}
+	
+	public void setBirthplace(String birthplace) {
+		this.birthplace = birthplace;
+	}
 	public boolean addCVItem(CVItem object) {
 		return cvItems.add(object);
 	}

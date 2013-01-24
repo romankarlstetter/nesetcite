@@ -3,29 +3,29 @@ package fr.ecp.innovationprj.nesetcite.mycv;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.facebook.Session;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
-
-import com.facebook.Session;
-
 import fr.ecp.innocationprj.nesetcite.information.ProfileAccess;
 import fr.ecp.innocationprj.nesetcite.information.ProfileInformationAdapter;
 import fr.ecp.innovationprj.nesetcite.EditTextDialog;
 import fr.ecp.innovationprj.nesetcite.EditTextDialog.EditTextDialogListener;
 import fr.ecp.innovationprj.nesetcite.R;
 import fr.ecp.innovationprj.nesetcite.TabsAdapter;
+import fr.ecp.innovationprj.nesetcite.mycv.EditCVItemDialog.EditCVItemDialogListener;
 
-public class ProfileActivity extends FragmentActivity implements EditTextDialogListener, ProfileAccess {
+public class ProfileActivity extends FragmentActivity implements ProfileAccess {
     TabHost mTabHost;
     ViewPager  mViewPager;
     TabsAdapter mTabsAdapter;
-    List<CVItem> mCVItemList;
     ProfileInformationAdapter profileAdapter;
     private Profile profile;
     
@@ -36,7 +36,6 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
         setContentView(R.layout.activity_profile);
         mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
-        mCVItemList = new ArrayList<CVItem>();
         
         profileAdapter = new ProfileInformationAdapter(getApplicationContext());
         profile = profileAdapter.getUserProfile();
@@ -49,20 +48,42 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
         mTabsAdapter.addTab(mTabHost.newTabSpec("personal_data").setIndicator("Personal Data"), EditPersonalDataFragment.class, null);
         Bundle edu = new Bundle();
         edu.putString("category", "education");
+        edu.putString("categoryTitle", "Éducation");
         mTabsAdapter.addTab(mTabHost.newTabSpec("education").setIndicator("Formation"), CVItemListFragment.class, edu);
         Bundle exp = new Bundle();
         exp.putString("category", "experiences");
+        exp.putString("categoryTitle", "Éxperience");
         mTabsAdapter.addTab(mTabHost.newTabSpec("experiences").setIndicator("Expériences pro"), CVItemListFragment.class, exp);
         Bundle other = new Bundle();
         other.putString("category", "other");
+        other.putString("categoryTitle", "Autre");
         mTabsAdapter.addTab(mTabHost.newTabSpec("other").setIndicator("Activitées"), CVItemListFragment.class, other);
         
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_young_people, menu);
+        getMenuInflater().inflate(R.menu.activity_profile, menu);
         return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.save:
+            	saveProfile();
+                return true;
+            case R.id.logout:
+                Session.getActiveSession().closeAndClearTokenInformation();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    
+    public void saveProfile(){
+    	
     }
     
     
@@ -83,24 +104,8 @@ public class ProfileActivity extends FragmentActivity implements EditTextDialogL
         editTextDialog.show(fm, "fragment_edit_name");
 
     }
-
-	@Override
-	public void onFinishEditDialog(String inputText) {
-		CVItem i = new CVItem();
-		i.setCategory(mTabHost.getCurrentTabTag());
-		i.setDescription(inputText);
-		getProfile().addCVItem(i);
-	}
-	
-	public void logout(View view){
-		Session.getActiveSession().closeAndClearTokenInformation();
-		finish();
-	}
 	
 	public Profile getProfile() {
 		return profile;
 	}
-	
-
-	
 }

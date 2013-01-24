@@ -1,0 +1,4 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/logout" android:title="Déconnexion"></item>
+    <item android:id="@+id/save" android:title="Sauvegarder"></item>
+</menu>

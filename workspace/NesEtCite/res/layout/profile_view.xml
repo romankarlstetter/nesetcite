@@ -25,14 +25,14 @@
                 android:src="@drawable/user_icon" />
 
             <TextView
-                android:id="@+id/editText1"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="3pt"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-           		android:onClick="changeName"
+                android:onClick="changeName"
                 android:text="Prenom Nom"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -46,7 +46,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/editText2"
+            android:id="@+id/presentation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5pt"
@@ -65,17 +65,13 @@
             
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <TextView
-            android:id="@+id/EditText01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginTop="2pt"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:text="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? " />
+<ListView
+    android:id="@+id/cv_items_exp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/button1" >
 
+        </ListView>
         <TextView
             android:id="@+id/TextView03"
             android:layout_width="wrap_content"
@@ -83,17 +79,13 @@
             android:text="Compétences"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <TextView
-            android:id="@+id/EditText02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginTop="2pt"
-            android:ems="10"
-            android:text="Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. "
-            android:inputType="textMultiLine" />
+<ListView
+    android:id="@+id/cv_item_edu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/button1" >
 
+        </ListView>
         <TextView
             android:id="@+id/TextView02"
             android:layout_width="wrap_content"
@@ -101,17 +93,13 @@
             android:text="Activités culturelles et sportives"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <TextView
-            android:id="@+id/EditText03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginTop="2pt"
-            android:ems="10"
-            android:text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
-            android:inputType="textMultiLine" />
+<ListView
+    android:id="@+id/cv_item_other"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/button1" >
 
+        </ListView>
 
             
 

@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,23 +15,58 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import fr.ecp.innocationprj.nesetcite.information.ProfileAccess;
 import fr.ecp.innovationprj.nesetcite.R;
+import fr.ecp.innovationprj.nesetcite.mycv.EditCVItemDialog.EditCVItemDialogListener;
 
-public class CVItemListFragment extends Fragment {
+public class CVItemListFragment extends Fragment implements EditCVItemDialogListener {
 
 	
 	private FilteredCVItemList itemList;
 	private ProfileAccess profileAccess;
 	private String listCategory;
+	private String categoryTitle;
+	private ArrayAdapter<CVItem> adapter;
+	
+	@Override
+	public void onFinishCVItemDialog(CVItem item) {
+		item.setCategory(listCategory);
+		profileAccess.getProfile().addCVItem(item);
+		adapter.notifyDataSetChanged();
+	}
 	
 	public CVItemListFragment() {
 		itemList = new FilteredCVItemList();
+		setHasOptionsMenu(true);
 	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		listCategory = getArguments().getString("category");
-		System.out.println("settings category:" + listCategory);
+		categoryTitle = getArguments().getString("categoryTitle");
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
+		inflater.inflate(R.menu.fragment_cvitems, menu);
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.add:
+            	addCVItem();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+	
+	public void addCVItem(){
+		EditCVItemDialog d = new EditCVItemDialog(this);
+		d.setTitle(categoryTitle);
+		d.show(getFragmentManager(), listCategory);
 	}
 	
 	@Override
@@ -38,8 +76,8 @@ public class CVItemListFragment extends Fragment {
 		
 		ListView listView = (ListView) v.findViewById(R.id.cv_item_listview);
 		
-		ArrayAdapter<CVItem> a = new CVItemsAdapter(getActivity().getApplicationContext(), itemList);
-        listView.setAdapter(a);
+		adapter = new CVItemsAdapter(getActivity().getApplicationContext(), itemList);
+        listView.setAdapter(adapter);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -55,7 +93,7 @@ public class CVItemListFragment extends Fragment {
 			System.out.println(i);
 		}
 		
-		a.notifyDataSetChanged();
+		adapter.notifyDataSetChanged();
         return v;
 	}
 	

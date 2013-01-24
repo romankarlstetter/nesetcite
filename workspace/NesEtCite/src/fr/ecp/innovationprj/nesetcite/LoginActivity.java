@@ -1,6 +1,7 @@
 package fr.ecp.innovationprj.nesetcite;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,6 @@ import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
-import com.facebook.android.Facebook;
 import com.facebook.model.GraphUser;
 
 import fr.ecp.innovationprj.nesetcite.mycv.ProfileActivity;

@@ -98,13 +98,16 @@ public class OffersActivity extends FragmentActivity {
 				convertView = inflater.inflate(R.layout.offer_list_item, null);
 			} 
 			TextView title = (TextView) convertView.findViewById(R.id.offerTitle);
-			title.setText(offerList.get(position).getTitle());
+			String t = offerList.get(position).getTitle();
+			title.setText(t != null ? t : "");
 			
 			TextView description = (TextView) convertView.findViewById(R.id.offerDescription);
-			description.setText(offerList.get(position).getDescriptionShort());
+			String d = offerList.get(position).getDescriptionShort();
+			description.setText(d != null ? d : "");
 
 			TextView company = (TextView) convertView.findViewById(R.id.offerEnterprise);
-			company.setText(offerList.get(position).getEnterprise().getName());
+			String c = offerList.get(position).getEnterprise().getName();
+			company.setText(c != null ? c : "");
 			
 			return convertView;
 		}
