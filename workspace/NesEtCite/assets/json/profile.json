@@ -14,27 +14,27 @@
 			"category": "education",
 			"description": "Lycée",
 			"title": "Blablabla",
-			"dateStart": 910326800
+			"dateStart": 910326800000
 			
 		},
 		{
 			"category": "education",
 			"title": "Bla",
 			"description": "ECP",
-			"dateStart": 1358941248
+			"dateStart": 1358941240008
 		},
 		{
 			"category": "experiences",
 			"title": "Blub",
 			"description": "stage A",
 			"dateStart": 1358541248,
-			"dateEnd": 1358871248
+			"dateEnd": 1358871240008
 		},
 		{
 			"category": "experiences",
 			"description": "stage B",
-			"dateStart": 1358841248,
-			"dateStart": 1358851248
+			"dateStart": 13588412000048,
+			"dateStart": 1358000851248
 		},
 		{
 			"category": "other",

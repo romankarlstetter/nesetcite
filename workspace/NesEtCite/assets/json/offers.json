@@ -11,8 +11,8 @@
 		},
 		"domain": "automotive",
 		"type": "type 1",
-		"offerDate": 1326793647,
-		"possibleBeginDate": 1328793647
+		"offerDate": 1326793600047,
+		"possibleBeginDate": 132870003647
 	},
 	{
 		"title": "Offer 2",
@@ -26,8 +26,8 @@
 		},
 		"domain": "automotive",
 		"type": "type 2",
-		"offerDate": 1326743647,
-		"possibleBeginDate": 1328792647
+		"offerDate": 1326743600047,
+		"possibleBeginDate": 1328700092647
 	},
 	{
 		"title": "Offer VW",
@@ -41,8 +41,8 @@
 		},
 		"domain": "cars",
 		"type": "type 2",
-		"offerDate": 1326243647,
-		"possibleBeginDate": 1322792647
+		"offerDate": 1326243600047,
+		"possibleBeginDate": 1322000792647
 	},
 	{
 		"title": "Offer Audi",
@@ -56,8 +56,8 @@
 		},
 		"domain": "automotive",
 		"type": "type 2",
-		"offerDate": 1326243647,
-		"possibleBeginDate": 1322792647
+		"offerDate": 1326243600047,
+		"possibleBeginDate": 1322000792647
 	},
 	{
 		"title": "Offer Audi 2",
@@ -71,8 +71,8 @@
 		},
 		"domain": "automotive",
 		"type": "type 3",
-		"offerDate": 1327243647,
-		"possibleBeginDate": 1322892647
+		"offerDate": 1327243640007,
+		"possibleBeginDate": 1322000892647
 	},
 	{
 		"title": "Offer Audi 3",
@@ -101,7 +101,7 @@
 		},
 		"domain": "automotive",
 		"type": "type 2",
-		"offerDate": 1326893647,
-		"possibleBeginDate": 1328993647
+		"offerDate": 1326893640007,
+		"possibleBeginDate": 1328000993647
 	}
 ]
