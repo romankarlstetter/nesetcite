@@ -3,6 +3,11 @@ package fr.ecp.innovationprj.nesetcite.offers;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.content.Context;
 import android.content.res.AssetManager;
 
@@ -15,23 +20,21 @@ public class JsonOffersProvider extends AbstractOffersProvider {
 
 	private ObjectMapper mapper;
 	
-	private final static String BASEURL = "json/";
-	private Context applicationContext; //TODO remove when real server-requests are done	
+	private final static String BASEURL = "http://10.0.2.2/nesetcite/";
 	public JsonOffersProvider(Context c) {
 		mapper = new ObjectMapper();
-		applicationContext = c;
 		filter = new OfferFilter();
 	}
 	
 	
 	@Override
 	public List<Offer> getFilteredOfferList() {
-		// TODO: make HTTP-request to server with information, use server-side filtering
-		// i.e. something like http://www.nesetcite.com/webservice/offers?title=<titleFilter>&description=<descriptionFilter>
 		List<Offer> result = null;
-		AssetManager m = applicationContext.getAssets();
 		try {
-			result = mapper.readValue(m.open(BASEURL + "offers.json"), new TypeReference<List<Offer>>(){});
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpGet get = new HttpGet(BASEURL + "offers.json");
+			HttpResponse response = httpclient.execute(get);
+			result = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Offer>>(){});
 		} catch (JsonParseException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {

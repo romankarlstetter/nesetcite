@@ -1,9 +1,19 @@
 package fr.ecp.innovationprj.nesetcite.mycv;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.facebook.Session;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +24,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
+
+import com.facebook.Session;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import fr.ecp.innocationprj.nesetcite.information.ProfileAccess;
 import fr.ecp.innocationprj.nesetcite.information.ProfileInformationAdapter;
 import fr.ecp.innovationprj.nesetcite.EditTextDialog;
-import fr.ecp.innovationprj.nesetcite.EditTextDialog.EditTextDialogListener;
 import fr.ecp.innovationprj.nesetcite.R;
 import fr.ecp.innovationprj.nesetcite.TabsAdapter;
-import fr.ecp.innovationprj.nesetcite.mycv.EditCVItemDialog.EditCVItemDialogListener;
 
 public class ProfileActivity extends FragmentActivity implements ProfileAccess {
     TabHost mTabHost;
@@ -29,7 +43,8 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
     ProfileInformationAdapter profileAdapter;
     private Profile profile;
     
-    
+	private final static String BASEURL = "http://10.0.2.2/nesetcite/";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +52,7 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
         mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
         
-        profileAdapter = new ProfileInformationAdapter(getApplicationContext());
+        profileAdapter = new ProfileInformationAdapter();
         profile = profileAdapter.getUserProfile();
         
         mViewPager = (ViewPager)findViewById(R.id.pager);
@@ -83,6 +98,39 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
     }
     
     public void saveProfile(){
+    	ObjectMapper m = new ObjectMapper();
+    	OutputStream out = new ByteArrayOutputStream();
+    	try {
+			m.writeValue(out, getProfile());
+			System.out.println(out.toString());
+			
+			HttpClient client = new DefaultHttpClient();
+	    	HttpPost post = new HttpPost(BASEURL + "dummyReceivePost.php");
+	    	//post.setEntity(new StringEntity(out.toString()));
+	    	List<NameValuePair> list = new ArrayList<NameValuePair>();
+	    	list.add(new BasicNameValuePair("profile", out.toString()));
+	    	post.setEntity(new UrlEncodedFormEntity(list));
+	    	HttpResponse response = client.execute(post);
+	    	// debug
+	    	InputStream istr = response.getEntity().getContent();
+	    	int c;
+	    	while((c = istr.read()) != -1){
+	    		System.out.print((char) c);
+	    	}
+	    	System.out.println();
+	    	// end debug
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
     	
     }
     

@@ -21,6 +21,9 @@ public class EditCVItemDialog extends DialogFragment {
 
 	private String dialogTitle;
 	private EditCVItemDialogListener resultListener;
+	private final static int PLUSYEARS = 3;
+	private final static int YEARSCOUNT = 50;
+	
 	public interface EditCVItemDialogListener {
         void onFinishCVItemDialog(CVItem item);
     }
@@ -47,14 +50,14 @@ public class EditCVItemDialog extends DialogFragment {
         
         Integer m[] = new Integer[12];
         for(int i = 0; i<12; i++){
-        	m[i] = new Integer(i+1);
+        	m[i] = Integer.valueOf(i+1);
         }
         SpinnerAdapter months = new ArrayAdapter<Integer>(getActivity().getApplicationContext(), android.R.layout.simple_spinner_item, m);
         
-        Integer y[] = new Integer[50];
+        Integer y[] = new Integer[YEARSCOUNT];
         System.out.println(thisYear);
-        for(int i = 0; i<50; i++){
-        	y[i] = thisYear + 3-i;
+        for(int i = 0; i<YEARSCOUNT; i++){
+        	y[i] = Integer.valueOf(thisYear + PLUSYEARS-i);
         	
         }
         SpinnerAdapter years = new ArrayAdapter<Integer>(getActivity().getApplicationContext(), android.R.layout.simple_spinner_item, y);
@@ -68,10 +71,10 @@ public class EditCVItemDialog extends DialogFragment {
    		dateToMonth.setAdapter(months);
    		dateToYear.setAdapter(years);
    		
+   		dateFromMonth.setSelection(thisMonth-1); // select this month
    		dateFromMonth.setSelection(thisMonth-1);
-   		dateFromMonth.setSelection(thisMonth-1);
-   		dateFromYear.setSelection(3);
-   		dateToYear.setSelection(3);
+   		dateFromYear.setSelection(PLUSYEARS); // select this year
+   		dateToYear.setSelection(PLUSYEARS);
    		
 
         Button ok = (Button) view.findViewById(R.id.buttonOK);

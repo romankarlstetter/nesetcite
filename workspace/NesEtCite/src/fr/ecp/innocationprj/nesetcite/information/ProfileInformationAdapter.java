@@ -2,8 +2,12 @@ package fr.ecp.innocationprj.nesetcite.information;
 
 import java.io.IOException;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.content.Context;
-import android.content.res.AssetManager;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -15,20 +19,20 @@ import fr.ecp.innovationprj.nesetcite.mycv.Profile;
 
 public class ProfileInformationAdapter {
 
-	private final static String BASEURL = "json/";
+	private final static String BASEURL = "http://10.0.2.2/nesetcite/";
 	private ObjectMapper mapper;
-	private Context context;
 	
-	public ProfileInformationAdapter(Context c) {
+	public ProfileInformationAdapter() {
     	mapper = new ObjectMapper();
-    	context = c;
 	}
 	
 	public Profile getUserProfile() {
 		Profile result = null;
-		AssetManager m = context.getAssets();
 		try {
-			result = mapper.readValue(m.open(BASEURL + "profile.json"), new TypeReference<Profile>(){});
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpGet get = new HttpGet(BASEURL + "profile.json");
+			HttpResponse response = httpclient.execute(get);
+			result = mapper.readValue(response.getEntity().getContent(), new TypeReference<Profile>(){});
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

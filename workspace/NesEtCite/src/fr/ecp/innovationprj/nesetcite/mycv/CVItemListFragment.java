@@ -88,10 +88,6 @@ public class CVItemListFragment extends Fragment implements EditCVItemDialogList
 		});
 		itemList.setList(profileAccess.getProfile().getCvItems());
 		itemList.setCategory(listCategory);
-		System.out.println("List " + listCategory);
-		for(CVItem i: itemList){
-			System.out.println(i);
-		}
 		
 		adapter.notifyDataSetChanged();
         return v;
