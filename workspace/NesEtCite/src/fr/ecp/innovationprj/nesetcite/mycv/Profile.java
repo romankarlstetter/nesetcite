@@ -23,7 +23,6 @@ public class Profile {
 	public String getBirthplace() {
 		return birthplace;
 	}
-	
 	public void setBirthplace(String birthplace) {
 		this.birthplace = birthplace;
 	}

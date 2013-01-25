@@ -5,6 +5,7 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/profile_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
@@ -56,52 +57,6 @@
             android:inputType="textMultiLine"
             android:onClick="changeDescription"
             android:text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" />
-
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Expériences"
-            
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-<ListView
-    android:id="@+id/cv_items_exp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/button1" >
-
-        </ListView>
-        <TextView
-            android:id="@+id/TextView03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Compétences"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-<ListView
-    android:id="@+id/cv_item_edu"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/button1" >
-
-        </ListView>
-        <TextView
-            android:id="@+id/TextView02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Activités culturelles et sportives"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-<ListView
-    android:id="@+id/cv_item_other"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/button1" >
-
-        </ListView>
-
-            
 
     </LinearLayout>
 </ScrollView>

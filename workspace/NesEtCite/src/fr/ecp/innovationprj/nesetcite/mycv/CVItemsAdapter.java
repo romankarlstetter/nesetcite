@@ -23,25 +23,28 @@ public class CVItemsAdapter extends ArrayAdapter<CVItem> {
 			LayoutInflater inflater = (LayoutInflater) getContext().getSystemService( Context.LAYOUT_INFLATER_SERVICE );
 			convertView = inflater.inflate(R.layout.cv_item_layout, null);
 		}
-		TextView title = (TextView) convertView.findViewById(R.id.cv_item_title);
-		title.setText(getItem(position).getTitle());
+		setCVItem(convertView, getItem(position));
+		return convertView;
+	}
+	
+	static void setCVItem(View view, CVItem item){
+		TextView title = (TextView) view.findViewById(R.id.cv_item_title);
+		title.setText(item.getTitle());
 
-		TextView description = (TextView) convertView.findViewById(R.id.cv_item_description);
-		description.setText(getItem(position).getDescription());
+		TextView description = (TextView) view.findViewById(R.id.cv_item_description);
+		description.setText(item.getDescription());
 		
-		TextView date = (TextView) convertView.findViewById(R.id.cv_item_date);
+		TextView date = (TextView) view.findViewById(R.id.cv_item_date);
 		SimpleDateFormat dateFormat = new SimpleDateFormat();
 		dateFormat.applyPattern("MMM yy");
 		String dateText = "";
-		if(getItem(position).getDateStart() != null){			
-			dateText = dateFormat.format(getItem(position).getDateStart());
+		if(item.getDateStart() != null){			
+			dateText = dateFormat.format(item.getDateStart());
 		}
-		if (getItem(position).getDateEnd() != null){
-			dateText = dateText + " - " + dateFormat.format(getItem(position).getDateEnd());
+		if (item.getDateEnd() != null){
+			dateText = dateText + " - " + dateFormat.format(item.getDateEnd());
 		}
 		date.setText(dateText);
-		return convertView;
-		
 	}
 
 }
