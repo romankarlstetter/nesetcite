@@ -58,9 +58,9 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
         mViewPager = (ViewPager)findViewById(R.id.pager);
         
         mTabsAdapter = new TabsAdapter(this, mTabHost, mViewPager);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("profile").setIndicator("Mon Profile"), 
+        mTabsAdapter.addTab(mTabHost.newTabSpec("profile").setIndicator("Mon Profil"), 
                 ProfileFragment.class, null);
-        mTabsAdapter.addTab(mTabHost.newTabSpec("personal_data").setIndicator("Personal Data"), EditPersonalDataFragment.class, null);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("personal_data").setIndicator("Données Personnelles"), EditPersonalDataFragment.class, null);
         Bundle edu = new Bundle();
         edu.putString("category", "education");
         edu.putString("categoryTitle", "Éducation");
@@ -72,7 +72,7 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
         Bundle other = new Bundle();
         other.putString("category", "other");
         other.putString("categoryTitle", "Autre");
-        mTabsAdapter.addTab(mTabHost.newTabSpec("other").setIndicator("Activitées"), CVItemListFragment.class, other);
+        mTabsAdapter.addTab(mTabHost.newTabSpec("other").setIndicator("Autres Activités"), CVItemListFragment.class, other);
         
     }
 
@@ -101,7 +101,7 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
     	ObjectMapper m = new ObjectMapper();
     	OutputStream out = new ByteArrayOutputStream();
     	try {
-			m.writeValue(out, getProfile());
+			m.writeValue(out, getProfile()); // put Profile in JSON-format to out
 			System.out.println(out.toString());
 			
 			HttpClient client = new DefaultHttpClient();
@@ -120,17 +120,12 @@ public class ProfileActivity extends FragmentActivity implements ProfileAccess {
 	    	System.out.println();
 	    	// end debug
 		} catch (JsonGenerationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
-    	
     	
     }
     

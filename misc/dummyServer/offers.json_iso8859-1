@@ -1,8 +1,8 @@
 [
 	{
 		"title": "Caissier Casino",
-		"descriptionShort": "Travail h√¥te de caisse pour une dur√©e de 3 mois",
-		"descriptionLong": "Offre de travail √† plein temps, d'une dur√©e de 6 mois, dans un G√©ant Casino au poste d'h√¥te de caisse, avec possibilit√© de conversion en CDI",
+		"descriptionShort": "Travail hÙte de caisse pour une durÈe de 3 mois",
+		"descriptionLong": "Offre de travail ‡ plein temps, d'une durÈe de 6 mois, dans un GÈant Casino au poste d'hÙte de caisse, avec possibilitÈ de conversion en CDI",
 		"enterprise": {
 			"name": "Geant Casino",
 			"contactName": "Mme. Meynard",
@@ -17,22 +17,22 @@
 	{
 		"title": "Stadier Olympique Lyonnais temps partiel",
 		"descriptionShort": "Travail de Stadier une fois par semaine, CDI",
-		"descriptionLong": "Cherchons personnes s√©rieuses, de confiance, patientes et avec de l'autorit√© pour travail √† temps partiel donc surveillance des stades lors des matchs, une fois par semaine et pr√©paration de l'√©v√®nement le reste du temps",
+		"descriptionLong": "Cherchons personnes sÈrieuses, de confiance, patientes et avec de l'autoritÈ pour travail ‡ temps partiel donc surveillance des stades lors des matchs, une fois par semaine et prÈparation de l'ÈvËnement le reste du temps",
 		"enterprise": {
 			"name": "Olympique Lyonnais",
 			"contactName": "M. Aulas",
 			"contactNumber": "+33453908741",
 			"contactMail": "jm.aulas@rh-olympique-lyonnais.fr"
 		},
-		"domain": "s√©curit√©",
+		"domain": "sÈcuritÈ",
 		"type": "CDI temps partiel",
 		"offerDate": 1326744947,
 		"possibleBeginDate": 1326749947
 	},
 	{
 		"title": "Assistant Commercial Volkswagen",
-		"descriptionShort": "Stage 6 semaines vace possibilit√© d'embauche pour assistant commercial temps plein",
-		"descriptionLong": "Nous proposons un stage de 6 semaines √† temps plein en tant qu'assistant commercial en vue d'une possible embauche en CDI, nous recherchons une personne s√©rieuse avec une exp√©rience dans le domaine de la vente et marketing",
+		"descriptionShort": "Stage 6 semaines vace possibilitÈ d'embauche pour assistant commercial temps plein",
+		"descriptionLong": "Nous proposons un stage de 6 semaines ‡ temps plein en tant qu'assistant commercial en vue d'une possible embauche en CDI, nous recherchons une personne sÈrieuse avec une expÈrience dans le domaine de la vente et marketing",
 		"enterprise": {
 			"name": "Volkswagen",
 			"contactName": "M. Ben Arfa",
@@ -46,8 +46,8 @@
 	},
 	{
 		"title": "Kebab la mer noire",
-		"descriptionShort": "Cherhce employ√© pour t√¢ches diverses",
-		"descriptionLong": "Recherche deux √† trois personnes pour m'√©pauler dans le fonctionnement de mon restaurant: temps plein, CDI, demande de la volont√© et du travail",
+		"descriptionShort": "Cherhce employÈ pour t‚ches diverses",
+		"descriptionLong": "Recherche deux ‡ trois personnes pour m'Èpauler dans le fonctionnement de mon restaurant: temps plein, CDI, demande de la volontÈ et du travail",
 		"enterprise": {
 			"name": "La Mer Noire",
 			"contactName": "M. Chamackh",
@@ -60,16 +60,16 @@
 		"possibleBeginDate": 1322792647
 	},
 	{
-		"title": "Cherche d√©m√©nageurs Demeco",
-		"descriptionShort": "Demeco Lyon cherche d√©m√©nageurs pour CDD 4 mois",
-		"descriptionLong": "Nous cherchons un des personnes s√©rieuses susceptibles de supporter le travail demand√© par la profession. Possibilit√© de transformer CDD en CDI si travail bien fait",
+		"title": "Cherche dÈmÈnageurs Demeco",
+		"descriptionShort": "Demeco Lyon cherche dÈmÈnageurs pour CDD 4 mois",
+		"descriptionLong": "Nous cherchons un des personnes sÈrieuses susceptibles de supporter le travail demandÈ par la profession. PossibilitÈ de transformer CDD en CDI si travail bien fait",
 		"enterprise": {
 			"name": "Demeco",
 			"contactName": "M. Benzadon",
 			"contactNumber": "+33457315327",
 			"contactMail": "c.benzadon@recrutement-demeco.fr"
 		},
-		"domain": "d√©m√©nagement",
+		"domain": "dÈmÈnagement",
 		"type": "CDD",
 		"offerDate": 1327243647,
 		"possibleBeginDate": 1327892647
@@ -77,22 +77,22 @@
 	{
 		"title": "Footlocker cherche magasinier",
 		"descriptionShort": "Nous cherchons deux magasiniers temps plein CDI pour notre magasin centre ville",
-		"descriptionLong": "Notre d√©veloppement rapide promet deux places sures. Nous cherchons des candidats issus de la diversit√© et de zones sensibles pour r√©pondre √† la demande sociale et soci√©tale",
+		"descriptionLong": "Notre dÈveloppement rapide promet deux places sures. Nous cherchons des candidats issus de la diversitÈ et de zones sensibles pour rÈpondre ‡ la demande sociale et sociÈtale",
 		"enterprise": {
 			"name": "Foot Locker",
 			"contactName": "M. Joachim",
 			"contactNumber": "+33459871357",
 			"contactMail": "jp.joachim@footlocker.fr"
 		},
-		"domain": "D√©taillant",
+		"domain": "DÈtaillant",
 		"type": "CDI",
 		"offerDate": 1327343647,
 		"possibleBeginDate": 1329832647
 	},
 	{
 		"title": "MCM cherche personnel BTP",
-		"descriptionShort": "Cherchons personnes √† fort potentiel de travail",
-		"descriptionLong": "Cherchons personnels pour des travaux de BTP, en interim puis possibilit√© CDI, si travail bien fait. Temps plein, travail exigeant",
+		"descriptionShort": "Cherchons personnes ‡ fort potentiel de travail",
+		"descriptionLong": "Cherchons personnels pour des travaux de BTP, en interim puis possibilitÈ CDI, si travail bien fait. Temps plein, travail exigeant",
 		"enterprise": {
 			"name": "MCM construction",
 			"contactName": "M. Fontaine",

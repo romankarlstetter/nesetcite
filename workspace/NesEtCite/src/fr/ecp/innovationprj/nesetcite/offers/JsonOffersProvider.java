@@ -9,7 +9,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -26,13 +25,12 @@ public class JsonOffersProvider extends AbstractOffersProvider {
 		filter = new OfferFilter();
 	}
 	
-	
 	@Override
 	public List<Offer> getFilteredOfferList() {
 		List<Offer> result = null;
 		try {
 			HttpClient httpclient = new DefaultHttpClient();
-			HttpGet get = new HttpGet(BASEURL + "offers.json");
+			HttpGet get = new HttpGet(BASEURL + "offers.json?");
 			HttpResponse response = httpclient.execute(get);
 			result = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Offer>>(){});
 		} catch (JsonParseException e) {

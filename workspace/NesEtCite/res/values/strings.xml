@@ -22,5 +22,6 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_offers">Offers</string>
 	<string name="app_id">144672425685845</string>
-    
+	<string name="personal_data">Coordonnées Personnelles</string>
+	
 </resources>

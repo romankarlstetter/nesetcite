@@ -1,48 +1,46 @@
-{
-	"firstName": "Max",
-	"lastName": "McLastname",
-	"birthday": 910306800,
-	"telephoneNumber": "+33612345678",
-	"cvItems" : 
-	[
+﻿{
+	"firstName": "Andy",
+	"lastName": "Lavedrine",
+	"birthday": 605014236000,
+	"birthplace": "Paris",
+	"telephoneNumber": "+33617905596",	
+	"cvItems" : [
 		{
 			"category": "education",
-			"description": "École",
+			"description": "École d'Ingénieurs",
 			"title": "École Centrale Paris"
 		},
 		{
 			"category": "education",
-			"description": "Lycée",
-			"title": "Blablabla",
-			"dateStart": 910326800000
-			
+			"description": "Classe Préparatoire aux Grandes Ecoles",
+			"title": "MPSI/MP*",
+			"dateStart": "1261440000"
 		},
 		{
 			"category": "education",
-			"title": "Bla",
-			"description": "ECP",
-			"dateStart": 1358941240008
+			"description": "Lycée",
+			"title": "Lycée Madame de Sévigné, Bac S"
 		},
 		{
 			"category": "experiences",
-			"title": "Blub",
-			"description": "stage A",
-			"dateStart": 1358541248,
-			"dateEnd": 1358871240008
+			"description": "stage de 6 semaines dans une entreprise pharmaceutique en tant que magasinier"
+			
 		},
 		{
 			"category": "experiences",
-			"description": "stage B",
-			"dateStart": 13588412000048,
-			"dateStart": 1358000851248
+			"description": "Semestre académique en Corée du Sud"
+			
 		},
 		{
 			"category": "other",
-			"description": "Skiing"
+			"description": "Pratique régulière du judo depuis 10 ans, en compétition"
 		},
 		{
 			"category": "other",
-			"description": "Party"
+			"description": "Investi dans le bénévolat: cours de français à des détenus, en prison, distribution de repas aux restos du coeur"
 		}
 	]
 }
+
+
+

@@ -1,0 +1,107 @@
+[
+	{
+		"title": "Offer 1",
+		"descriptionShort": "Very short description",
+		"descriptionLong": "This is a longer description, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "BMW",
+			"contactName": "Mr. BMW",
+			"contactNumber": "0912322321",
+			"contactMail": "exampletest@bmw.de"
+		},
+		"domain": "automotive",
+		"type": "type 1",
+		"offerDate": 1326793600047,
+		"possibleBeginDate": 132870003647
+	},
+	{
+		"title": "Offer 2",
+		"descriptionShort": "Also short description",
+		"descriptionLong": "This is also a longer description, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "BMW",
+			"contactName": "Mr. BMW",
+			"contactNumber": "0912322321",
+			"contactMail": "exampletest@bmw.de"
+		},
+		"domain": "automotive",
+		"type": "type 2",
+		"offerDate": 1326743600047,
+		"possibleBeginDate": 1328700092647
+	},
+	{
+		"title": "Offer VW",
+		"descriptionShort": "Also short description",
+		"descriptionLong": "This is also a longer description, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "VW",
+			"contactName": "Mr. VW",
+			"contactNumber": "09121112221",
+			"contactMail": "exampletest@vw.de"
+		},
+		"domain": "cars",
+		"type": "type 2",
+		"offerDate": 1326243600047,
+		"possibleBeginDate": 1322000792647
+	},
+	{
+		"title": "Offer Audi",
+		"descriptionShort": "Also short description",
+		"descriptionLong": "This is also a longer description, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "Audi",
+			"contactName": "Mr. Audi",
+			"contactNumber": "09126644521",
+			"contactMail": "exampletest@audi.de"
+		},
+		"domain": "automotive",
+		"type": "type 2",
+		"offerDate": 1326243600047,
+		"possibleBeginDate": 1322000792647
+	},
+	{
+		"title": "Offer Audi 2",
+		"descriptionShort": "Also short description 2",
+		"descriptionLong": "This is also a longer description, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "Audi",
+			"contactName": "Mr. Audi",
+			"contactNumber": "09126644521",
+			"contactMail": "exampletest@audi.de"
+		},
+		"domain": "automotive",
+		"type": "type 3",
+		"offerDate": 1327243640007,
+		"possibleBeginDate": 1322000892647
+	},
+	{
+		"title": "Offer Audi 3",
+		"descriptionShort": "Some sample text",
+		"descriptionLong": "Some sample text, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "Audi",
+			"contactName": "Mr. Audi",
+			"contactNumber": "09126644521",
+			"contactMail": "exampletest@audi.de"
+		},
+		"domain": "automotive",
+		"type": "type 3",
+		"offerDate": 1327343647,
+		"possibleBeginDate": 1322832647
+	},
+	{
+		"title": "Offer BMW",
+		"descriptionShort": "BMW: description",
+		"descriptionLong": "BMW: long description, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
+		"enterprise": {
+			"name": "BMW",
+			"contactName": "Mr. BMW",
+			"contactNumber": "0912322321",
+			"contactMail": "exampletest@bmw.de"
+		},
+		"domain": "automotive",
+		"type": "type 2",
+		"offerDate": 1326893640007,
+		"possibleBeginDate": 1328000993647
+	}
+]

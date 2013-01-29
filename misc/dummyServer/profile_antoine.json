@@ -1,0 +1,7 @@
+
+
+
+{	"firstName": "Antoine",	"lastName": "Chassande",	"birthday": 946450800,	"telephoneNumber": "+33617988573",	"cvItems" : 	[		{			"category": "education",			"description": "École d'Ingénieurs",			"title": "École Centrale Paris"		},		{			"category": "education",			"description": "Classe Préparatoire aux Grandes Ecoles",			"title": "MPSI/MP*",			"dateStart": "1261440000"		},		{			"category": "education",			"description": "Lycée",
+"title": "Lycée Georges Clémenceau, Bac S"		},		{			"category": "experiences",			"description": "stage de 6 semaines dans une entreprise pharmaceutique en tant que magasinier"		},		{			"category": "experiences",			"description": "Semestre académique en Inde"		},		{			"category": "other",			"description": "Pratique régulière du basket depuis 10 ans, en compétition"		},		{			"category": "other",			"description": "Investi dans le bénévolat: cours de remise à niveau à des personnes issues de milieux défavorisés"		}	]}
+
+
